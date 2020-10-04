@@ -1,8 +1,11 @@
 #include <iostream>
 #include "car.hpp"
 #include "rectangle.hpp"
+#include "Vector2.hpp"
 
-int main(int argc, char ** argv)
+
+
+int main(int argc, char ** argv, const char ** str2)
 {    
     /*
         char 8 bits (1 byte)
@@ -51,10 +54,25 @@ int main(int argc, char ** argv)
     Car renault("Renault", 175);
     Car toyota("Toyota", 0);
 
+    //Object
     bmw.drive();
     honda.drive();
     renault.drive();
     toyota.drive();
+
+    //3 New Vecotrs in my Vector2 Class
+
+    Motor MotorXY(x, y);
+    Motor Motor1(100, 8);
+    Motor Motor2(100, 11);
+    Motor Motor3(100, 10.5);
+    Motor Motor4(100, 12);
+
+    //Print Instance for Vectors    
+    cout << "Velocidad maxima = " << Motor1.velocidad() << endl;
+    cout << "Velocidad Maxima = " << Motor2.velocidad() << endl;
+    cout << "Velocidad Maxima = " << Motor3.velocidad() << endl;
+    cout << "Velocidad Mexima = " << Motor4.velocidad() << endl;
 
     return 0;
 }
