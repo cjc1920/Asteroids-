@@ -1,32 +1,21 @@
 #include <iostream>
-using namespace std;
+#include <cmath>
 
-
-class Motor
+class vector2
 {
-
-private:
-   float X, Y;
-
-    //X=Distancia, Y=Tiempo
-
-    Motor(float X, float Y) : m_distancia(X), m_tiempo(Y)
-
-   {
-    cout << "La velocidad del motor es: " << m_distancia << " y " << m_tiempo << std::endl;
-   }
-
-    
-
-private:
-    int m_distancia, m_tiempo;
-
-
-        //Calcula la velocidad del motor
-
-public:
-    int velocidad()
-    {
-        return m_distancia / m_tiempo;
-    }
+        private:
+            float x;
+            float y;
+        
+        public:
+        vector2(float cx, float cy)
+        {
+            x = cx;
+            y = cy;
+        }
+void print()
+{
+        std::cout <<x<< " \n"; std::cout <<y<< " \n";
+        
+}        
 };
