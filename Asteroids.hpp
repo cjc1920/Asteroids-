@@ -3,37 +3,44 @@
 #ifndef ASTEROID_HPP
 #define ASTEROID_HPP
 
-// STL
-#include <vector>
-
+// Asteroids
 #include "Vector2.hpp"
+#include "GameObject.hpp"
 
 namespace Engine
 {
     class App;
-    class Asteroid
+    class Asteroid : public GameObject
     {
     public:
-        Asteroid(App *parent);
+        /* ==========================
+            * ENUMERATIONS
+            * ==========================*/
+        struct AsteroidSize
+        {
+            enum Size
+            {
+                BIG = 0,
+                MEDIUM = 1,
+                SMALL = 2
+            };
+        };
+        /* ==========================
+            * PUBLIC FUNCTIONS
+            * ==========================*/
+        Asteroid(AsteroidSize::Size size, App *parent);
         void Update(float deltaTime);
-        void Render();
+        inline AsteroidSize::Size GetSize() { return m_size; }
 
     private:
         /* ==========================
-            * PRIVATE FUNCTIONS
-            * ==========================*/
-        void ApplyImpulse(Engine::Math::Vector2 impulse);
-        /* ==========================
             * MEMBERS
             * ==========================*/
-        float m_angle;
-        float m_mass;
-        float m_rotation;
-        Engine::Math::Vector2 m_position;
-        Engine::Math::Vector2 m_velocity;
-        std::vector<Engine::Math::Vector2> m_points;
         App *m_parent;
+        AsteroidSize::Size m_size;
     };
 } // namespace Engine
+
 #endif
+
 
